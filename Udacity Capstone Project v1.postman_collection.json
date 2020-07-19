@@ -1,0 +1,257 @@
+{
+	"info": {
+		"_postman_id": "e62560b7-b3b5-4d99-b478-94140be7c305",
+		"name": "Udacity Capstone Project v1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GoodReads",
+			"item": [
+				{
+					"name": "Get all reviews",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-2.amazonaws.com/dev/reviews",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create review",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"bookName\": \"Harry Potter\",\n\t\"reviewText\": \"Best fantastic book ever!!!!\"\n}"
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-2.amazonaws.com/dev/reviews",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update review",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"bookName\": \"Harry Potter Series 2\",\n\t\"reviewText\": \"Best fantastic series ever!!!\",\n\t\"like\": true\n}"
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-2.amazonaws.com/dev/reviews/2d230e89-c78a-42cb-90bb-092b16f9361d",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"reviews",
+								"2d230e89-c78a-42cb-90bb-092b16f9361d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete review",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-2.amazonaws.com/dev/reviews/2d230e89-c78a-42cb-90bb-092b16f9361d",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"reviews",
+								"2d230e89-c78a-42cb-90bb-092b16f9361d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get attachment URL",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "/E:/Dev/UDACITY/Section2/intro/cloud-developer/course-02/exercises/udacity-c2-restapi/mock/lotus.jpg"
+							}
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-2.amazonaws.com/dev/reviews/2d230e89-c78a-42cb-90bb-092b16f9361d/attachment",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"reviews",
+								"2d230e89-c78a-42cb-90bb-092b16f9361d",
+								"attachment"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "873eec02-5f1a-4a7d-a989-c229326fb40f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "4a4b4b60-eb94-459d-a26a-3bad8c29ff2a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0666a7a9-53a3-4cb9-be92-af96f4a7b72c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "5f7a8220-78ed-490b-8868-c1991d0ae04f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "744c37a6-d7d9-43f0-9d0e-4862668dd788",
+			"key": "apiId",
+			"value": "2uvlde9otl"
+		},
+		{
+			"id": "360558b4-9e87-419c-9366-fa49c6180182",
+			"key": "authToken",
+			"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImhRYVRfSnVyZXlTNVI5eEpCMGRNNiJ9.eyJpc3MiOiJodHRwczovL2Rldi0tOHU4cXJsaS51cy5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMTA5Njk4NzY2MDYyMjM2MDgwODkiLCJhdWQiOiJtdEthRXYyZFllZUN2Z3hONUtOekJ0THRreGpQdmU4dyIsImlhdCI6MTU5NTE2MjQ3NSwiZXhwIjoxNTk1NTIyNDc1LCJhdF9oYXNoIjoiVlMweS1FNDlEdFpid3lOZ01CZTNmZyIsIm5vbmNlIjoiUlhxUG01d0Y0SUluREZ6Mkkyei12R1MwTTVpclR5d0wifQ.dz_p3dZBNWWOfHLZh3amBwljXHe2H8LqjZv0GsycCMrgCpkoLWFIJnYiWjOUsr2ZzxtzHfG1HLgm9S5lbzZWWsBUBZ-snjQgW_tIkxyCCF_A4h9g_-JHiDmbFOQwQewoQz8pzfQ2MmdEQ-_TN1uh-TFJZOmbrEgQLH6Y6TTh_7rBoYESBK2S5vkW_e4LST1HB5V-ukbA9HutGUOOSvfPLu80AGsJhO-g25ZEr3SB8uZA3T_OVNtPFZWH8ZcL6q7o_9zvnf3m4ngpirWYSZxtzmIJznulHkV0-8_IZxhh4jxFqXpEKP8d2Lxe6B25tSs8yzsGDFLoWLHxMoyPtee1Hg"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

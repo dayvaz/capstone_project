@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "update-review-scheme",
+  "type": "object",
+  "properties": {
+      "bookName": {
+          "type": "string"
+      },
+      "reviewText": {
+          "type": "string"
+      },
+      "like": {
+          "type": "boolean"
+      }
+  },
+  "required": [
+      "bookName",
+      "reviewText",
+      "like"
+  ],
+  "additionalProperties": false
+}

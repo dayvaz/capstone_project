@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "create-review-scheme",
+  "type": "object",
+  "properties": {
+      "bookName": {
+          "type": "string"
+      },
+      "reviewText": {
+          "type": "string"
+      }
+  },
+  "required": [
+      "bookName",
+      "reviewText"
+  ],
+  "additionalProperties": false
+}
